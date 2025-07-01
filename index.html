@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>LuxuCare - 挑戦こそ、最高の贅沢。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#333333',
+secondary: '#E5E5E5'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html, body {
+overflow-x: hidden;
+width: 100%;
+position: relative;
+}
+.hero-section {
+min-height: 100vh;
+background-position: center;
+background-size: cover;
+}
+.hero-overlay {
+min-height: 100vh;
+background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.9) 100%);
+}
+.hero-content {
+padding-top: 120px;
+}
+.hero-title {
+font-size: 4rem;
+line-height: 1.2;
+letter-spacing: -0.02em;
+}
+.hero-description {
+font-size: 1.25rem;
+line-height: 1.8;
+}
+.section-title {
+font-size: 2.5rem;
+letter-spacing: -0.02em;
+line-height: 1.4;
+}
+.section-title::after {
+display: none;
+}
+.service-card {
+transition: all 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-10px);
+}
+.blog-carousel {
+position: relative;
+margin: 0;
+}
+@media (max-width: 768px) {
+.container, .card, .form, .footer {
+width: 100%;
+padding-left: 16px;
+padding-right: 16px;
+box-sizing: border-box;
+max-width: 100%;
+}
+section {
+width: 100%;
+overflow: hidden;
+}
+.grid {
+margin: 0;
+}
+}
+.blog-track {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+@media (max-width: 768px) {
+.container {
+width: 100%;
+max-width: 360px;
+padding-left: 1rem;
+padding-right: 1rem;
+margin: 0 auto;
+}
+h1, h2, h3, p {
+word-break: break-word;
+}
+.text-wrap {
+word-break: break-word;
+}
+}
+.hero-section .container {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+.text-wrap {
+word-break: break-word;
+}
+.section-title {
+font-size: 1.75rem;
+line-height: 1.2;
+margin-bottom: 2rem;
+}
+section {
+padding: 3rem 0;
+}
+.hero-section,
+.conflict-section,
+.concept-section,
+.future-section {
+min-height: auto;
+padding: 4rem 0;
+}
+.hero-overlay,
+.conflict-overlay,
+.concept-overlay,
+.future-overlay {
+min-height: auto;
+padding: 4rem 0;
+}
+.blog-carousel {
+margin: 0;
+}
+.blog-track {
+flex-direction: column;
+transform: none !important;
+gap: 1rem;
+}
+.blog-slide {
+width: 100% !important;
+}
+section {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+h1 {
+font-size: 2rem !important;
+line-height: 1.2;
+}
+h2 {
+font-size: 1.75rem !important;
+}
+.hero-section {
+min-height: auto !important;
+padding-top: 5rem;
+}
+.hero-overlay {
+min-height: auto !important;
+}
+}
+.dial-progress {
+transition: stroke-dashoffset 0.5s ease-in-out;
+}
+.dial-indicator {
+transition: stroke 0.5s ease-in-out;
+}
+body {
+font-family: 'Noto Sans JP', sans-serif;
+color: #333;
+line-height: 1.7;
+}
+@media screen and (max-width: 768px) {
+.hero-section {
+background-position: 70% center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+}
+h1 {
+font-size: 2.5rem !important;
+}
+.container {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=A%20serene%2C%20minimalist%20interior%20space%20with%20soft%20natural%20light%20streaming%20through%20large%20windows.%20The%20foreground%20shows%20a%20silhouette%20of%20a%20person%20standing%20contemplatively%2C%20while%20in%20the%20distance%2C%20a%20path%20opens%20up%2C%20symbolizing%20opportunity%20and%20journey.%20The%20overall%20atmosphere%20is%20calm%2C%20inspiring%2C%20with%20subtle%20warm%20tones%20and%20cool%20shadows%20creating%20depth.%20The%20image%20has%20a%20clean%2C%20uncluttered%20composition%20with%20ample%20negative%20space.&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+@media (max-width: 768px) {
+.hero-section {
+background-position: 65% center;
+min-height: auto;
+padding: 6rem 0;
+}
+.hero-section .container {
+max-width: 360px;
+margin: 0 auto;
+padding: 0 1rem;
+}
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 100%);
+}
+.section-title {
+position: relative;
+}
+.section-title::after {
+content: "";
+position: absolute;
+bottom: -10px;
+left: 0;
+width: 60px;
+height: 3px;
+background-color: #333;
+}
+.conflict-section {
+background-image: url('https://readdy.ai/api/search-image?query=A%20wide%2C%20atmospheric%20shot%20of%20a%20person%20standing%20alone%20in%20a%20vast%2C%20minimalist%20space.%20The%20scene%20is%20captured%20from%20a%20distance%2C%20emphasizing%20the%20sense%20of%20being%20stuck%20or%20hesitant.%20The%20environment%20features%20clean%20lines%20and%20a%20subtle%20gradient%20of%20light%2C%20creating%20a%20contemplative%20mood.%20The%20composition%20uses%20negative%20space%20to%20convey%20emotional%20weight%20and%20uncertainty.&width=1920&height=1080&seq=2&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+.conflict-section {
+background-image: url('https://readdy.ai/api/search-image?query=A%20wide%2C%20atmospheric%20shot%20of%20a%20person%20standing%20alone%20in%20a%20vast%2C%20minimalist%20space.%20The%20scene%20is%20captured%20from%20a%20distance%2C%20emphasizing%20the%20sense%20of%20being%20stuck%20or%20hesitant.%20The%20environment%20features%20clean%20lines%20and%20a%20subtle%20gradient%20of%20light%2C%20creating%20a%20contemplative%20mood.%20The%20composition%20uses%20negative%20space%20to%20convey%20emotional%20weight%20and%20uncertainty.&width=800&height=1000&seq=2&orientation=portrait');
+background-position: center;
+}
+}
+@media (max-width: 768px) {
+.conflict-section {
+background-position: 60% center;
+min-height: auto;
+padding: 4rem 0;
+}
+.conflict-section .container {
+max-width: 360px;
+margin: 0 auto;
+padding: 0 1rem;
+}
+}
+.conflict-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 100%);
+}
+.concept-section {
+background-image: url('https://readdy.ai/api/search-image?query=Challenges%20can%20be%20designed.%20A%20minimalist%20and%20modern%20composition%20showing%20a%20clean%20workspace%20with%20design%20tools%20and%20blueprints.%20The%20scene%20suggests%20the%20systematic%20approach%20to%20planning%20and%20designing%20solutions.%20Soft%20natural%20lighting%20creates%20an%20inspiring%20atmosphere.%20The%20image%20emphasizes%20the%20blend%20of%20creativity%20and%20methodology.&width=1920&height=1080&seq=3&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+@media (max-width: 768px) {
+.concept-section {
+background-position: 55% center;
+min-height: auto;
+padding: 4rem 0;
+}
+.concept-section .container {
+max-width: 360px;
+margin: 0 auto;
+padding: 0 1rem;
+}
+}
+@media screen and (max-width: 768px) {
+.container {
+width: 100%;
+max-width: 360px;
+padding-left: 1rem;
+padding-right: 1rem;
+margin: 0 auto;
+}
+.hero-section,
+.conflict-section,
+.concept-section,
+.future-section {
+background-position: center;
+min-height: auto;
+}
+.grid {
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+.news-section .grid > div,
+.service-section .grid > div,
+.blog-section .grid > div {
+max-width: 360px;
+margin: 0 auto;
+}
+.text-3xl {
+font-size: 1.75rem;
+line-height: 1.3;
+}
+.text-4xl {
+font-size: 2rem;
+line-height: 1.2;
+}
+section {
+padding: 3rem 0;
+}
+}
+#mobile-menu-button {
+position: fixed;
+top: 1rem;
+right: 1rem;
+z-index: 60;
+background: rgba(255, 255, 255, 0.9);
+border-radius: 50%;
+width: 3rem;
+height: 3rem;
+}
+}
+.concept-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 100%);
+}
+.service-section {
+background-color: #f9f9f9;
+}
+.future-section {
+background-image: url('https://readdy.ai/api/search-image?query=A%20hopeful%20distant%20landscape%20view%20that%20blends%20everyday%20life%20with%20the%20spirit%20of%20challenge%20and%20adventure.%20Perhaps%20showing%20a%20comfortable%20cafe%20setting%20with%20a%20laptop%2C%20notebook%2C%20and%20coffee%2C%20but%20with%20a%20window%20view%20of%20mountains%20or%20an%20expansive%20horizon.%20The%20image%20conveys%20the%20integration%20of%20ambition%20into%20daily%20life.%20The%20lighting%20is%20warm%20and%20inviting%2C%20suggesting%20possibility%20and%20opportunity.%20The%20composition%20balances%20intimate%20foreground%20details%20with%20an%20inspiring%20background%20vista.&width=1920&height=1080&seq=4&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+@media (max-width: 768px) {
+.future-section {
+background-position: 50% center;
+min-height: auto;
+padding: 4rem 0;
+}
+.future-section .container {
+max-width: 360px;
+margin: 0 auto;
+padding: 0 1rem;
+}
+.section-title {
+font-size: 1.75rem;
+line-height: 1.3;
+margin-bottom: 1.5rem;
+}
+.blog-slide,
+.service-section .grid > div {
+width: 100%;
+max-width: 360px;
+margin: 0 auto;
+}
+}
+.future-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 100%);
+}
+.cta-button {
+transition: all 0.3s ease;
+}
+.cta-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+input:focus {
+outline: none;
+border-color: #333;
+}
+</style>
+</head>
+<body class="min-h-screen">
+<!-- Header -->
+<header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="/" id="logo-link" class="flex items-center">
+<img src="https://static.readdy.ai/image/c33b88104960700240b91b5e5a3dc3dc/f6ef618bcae6af67eba80041295ac207.png" alt="LuxuCare Logo" class="h-8">
+</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">Concept</a>
+<a href="#services" class="text-gray-700 hover:text-primary transition-colors">Service</a>
+<a href="#vision" class="text-gray-700 hover:text-primary transition-colors">Vision</a>
+<a href="#company" class="text-gray-700 hover:text-primary transition-colors">会社概要</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">お問合せ</a>
+</nav>
+<div class="md:hidden flex items-center">
+<button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden bg-white w-full">
+<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">Concept</a>
+<a href="#services" class="text-gray-700 hover:text-primary transition-colors">Service</a>
+<a href="#vision" class="text-gray-700 hover:text-primary transition-colors">Vision</a>
+<a href="#company" class="text-gray-700 hover:text-primary transition-colors">会社概要</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">お問合せ</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="hero" class="hero-section w-full relative">
+<div class="hero-overlay w-full flex items-center">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="hero-content max-w-4xl">
+<h1 class="hero-title font-bold mb-8 break-keep">挑戦こそ、<br>最高の贅沢。</h1>
+<p class="hero-description mb-12 max-w-2xl text-gray-700">
+今や"本気で挑むこと"そのものが希少で、困難で、尊い。忙しさ、雑音、不安の中で、それでも何かをやりたいと思う人たちがいる。LuxuCare が向き合うのは、そんな「挑戦に火がつきそうな人」です。
+</p>
+<div class="flex gap-6">
+<a href="#contact" class="inline-block bg-primary text-white py-4 px-12 !rounded-button text-lg font-medium hover:bg-opacity-90 transition-all cta-button whitespace-nowrap">
+無料相談する
+</a>
+<a href="#about" class="inline-block border-2 border-primary text-primary py-4 px-12 !rounded-button text-lg font-medium hover:bg-primary hover:text-white transition-all whitespace-nowrap">
+詳しく見る
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News Section -->
+<section id="news" class="bg-white py-20">
+<div class="container mx-auto px-4 sm:px-6">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-16 section-title">NEWS</h2>
+<div class="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
+<div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow max-w-2xl mx-auto">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-primary text-white text-sm px-3 py-1 rounded-full">お知らせ</span>
+<span class="ml-4 text-gray-500 text-sm">2025.06.02</span>
+</div>
+<h3 class="text-lg font-bold mb-2">LuxuCare株式会社を創業しました。</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Conflict Section -->
+<section id="about" class="conflict-section w-full min-h-screen flex items-center">
+<div class="conflict-overlay w-full min-h-screen flex items-center" style="background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.85) 100%);">
+<div class="container mx-auto px-6 py-20">
+<div class="w-full md:w-1/2">
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 section-title">挑戦したい。でも、動けない。</h2>
+<div class="space-y-6">
+<p class="text-base">
+感情のハードル、情報の渦、失敗への恐れ、気力の枯渇。挑戦にたどりつく前に、多くの人が立ち止まってしまう現実があります。
+</p>
+<p class="text-base">
+社会が「完璧に準備してから動け」とプレッシャーをかけてくる構造の中で、私たちは自分の可能性を狭めてしまっているのかもしれません。
+</p>
+<p class="text-base">
+そして、その「動けない」状態こそが、最も解決すべき課題なのです。
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Concept Section -->
+<section id="concept" class="concept-section w-full min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20minimalist%20workspace%20with%20design%20tools%20and%20blueprints%2C%20featuring%20soft%20natural%20lighting%20and%20a%20clean%20aesthetic.%20The%20scene%20shows%20a%20modern%20desk%20setup%20with%20architectural%20drawings%2C%20pencils%2C%20and%20digital%20devices.%20The%20composition%20emphasizes%20the%20systematic%20approach%20to%20planning%20and%20designing%20solutions%2C%20with%20a%20light%20and%20airy%20atmosphere%20that%20creates%20an%20inspiring%20environment.%20The%20overall%20tone%20is%20muted%20and%20calming%2C%20perfect%20for%20overlaying%20text.&width=1920&height=1080&seq=3&orientation=landscape');">
+<div class="concept-overlay w-full min-h-screen flex items-center" style="background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.85) 100%);">
+<div class="container mx-auto px-6 py-20">
+<div class="w-full md:w-1/2 ml-auto">
+<h2 class="text-2xl sm:text-3xl font-bold mb-12 section-title">挑戦は、"設計"できる。</h2>
+<div class="space-y-6">
+<p class="text-base text-gray-800">
+感情や行動を「意思」だけに頼らずに動かす設計。行動経済学、ナッジ、UX、AI を統合した"行動のデザイン"という考え方。
+</p>
+<p class="text-base text-gray-800">
+LuxuCare が提供するのは「挑戦に届く設計」です。AIを活用して無駄をそぎ落とし、行動経済学の知見で"動きたくなる設計"を施す。さらに、心の状態に目を向ける「感情体験プログラム」によって、内側からの成長を後押しします。
+</p>
+<p class="text-base">
+それが、私たちが提供する挑戦環境です。
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Section -->
+<section id="services" class="service-section w-full py-20">
+<div class="container mx-auto px-4 sm:px-6">
+<h2 class="text-3xl md:text-4xl font-bold mb-16 section-title">挑戦を始めるための、設計図を。</h2>
+<div class="flex flex-col gap-16">
+<!-- Service Card 1 -->
+<div class="relative w-full h-[600px] group overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20and%20modern%20workspace%20with%20multiple%20screens%20displaying%20programming%20code%20and%20AI%20interfaces.%20The%20screens%20show%20elegant%20code%20structures%20and%20data%20visualizations%20in%20cool%20blue%20tones.%20The%20composition%20is%20clean%20and%20professional%2C%20with%20subtle%20ambient%20lighting%20creating%20depth.%20The%20scene%20suggests%20advanced%20technology%20and%20development%20capabilities%2C%20with%20a%20minimalist%20aesthetic%20that%20emphasizes%20the%20technical%20expertise.&width=1920&height=800&seq=11&orientation=landscape" alt="AI Development" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent flex items-center">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="max-w-2xl transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<h3 class="text-5xl font-bold text-white mb-6">AI Tech Development</h3>
+<p class="text-white/90 text-xl leading-relaxed">
+AIを活用したアプリ・サービス開発（海外展開も含む）
+</p>
+<div class="mt-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-code-s-slash-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-global-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-database-2-line text-white text-2xl"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="relative w-full h-[600px] group overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20wearing%20a%20sleek%20VR%20headset%20in%20a%20modern%2C%20minimalist%20environment.%20Their%20facial%20expressions%20and%20body%20language%20suggest%20deep%20emotional%20engagement.%20Subtle%20neural%20network%20visualizations%20float%20around%20them%2C%20representing%20emotional%20data%20processing.%20The%20lighting%20is%20dramatic%20with%20cool%20blues%20and%20warm%20accents%2C%20creating%20an%20atmosphere%20of%20technological%20innovation%20meeting%20human%20experience.%20The%20composition%20emphasizes%20both%20the%20technical%20and%20human%20aspects%20of%20emotional%20design.&width=1920&height=800&seq=12&orientation=landscape" alt="Emotional UX" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent flex items-center">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="max-w-2xl transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<h3 class="text-4xl font-bold text-white mb-6">Emotional UX Design</h3>
+<p class="text-white/90 text-xl leading-relaxed">
+感情のバリアを緩めるUXプロダクト開発
+</p>
+<div class="mt-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-heart-pulse-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-user-heart-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-emotion-happy-line text-white text-2xl"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="relative w-full h-[600px] group overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20creative%20professional%20deeply%20engaged%20in%20specialized%20work%20at%20an%20elegantly%20designed%20workspace.%20The%20scene%20shows%20unique%20tools%20and%20custom%20equipment%20that%20suggest%20highly%20specialized%20expertise.%20The%20lighting%20is%20warm%20and%20focused%2C%20highlighting%20the%20craftsmanship%20and%20personal%20touch%20in%20their%20work.%20The%20environment%20combines%20modern%20technology%20with%20traditional%20elements%2C%20emphasizing%20the%20irreplaceable%20human%20element%20in%20professional%20work.%20The%20composition%20suggests%20both%20precision%20and%20creativity.&width=1920&height=800&seq=13&orientation=landscape" alt="Behavioral Economics" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent flex items-center">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="max-w-2xl transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<h3 class="text-4xl font-bold text-white mb-6">Behavioral Economics</h3>
+<p class="text-white/90 text-xl leading-relaxed">
+行動経済学を活用した業務効率化
+</p>
+<div class="mt-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-line-chart-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-brain-line text-white text-2xl"></i>
+</div>
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<i class="ri-rocket-line text-white text-2xl"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h2 class="text-3xl font-bold mb-8 text-center">導入事例</h2>
+<div class="text-center text-gray-600 mb-8">Coming Soon</div>
+<div class="text-center">
+<a href="#contact" class="inline-block bg-primary text-white py-3 px-8 !rounded-button font-medium hover:bg-opacity-90 transition-all cta-button whitespace-nowrap">
+無料相談する
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Future Vision Section -->
+<section id="vision" class="future-section w-full min-h-screen flex items-center">
+<div class="future-overlay w-full min-h-screen flex items-center" style="background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.85) 100%);">
+<div class="container mx-auto px-6 py-20">
+<div class="w-full md:w-1/2">
+<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-12 section-title">挑戦こそ、最高の贅沢。その世界を、当たり前に。</h2>
+<div class="space-y-6">
+<p class="text-base text-gray-800">
+LuxuCare は「贅沢な挑戦」ができる社会を設計していきます。誰もが"やってみたい"を日常にできる状態へ。
+</p>
+<p class="text-base text-gray-800">
+地方・高知から世界へ。私たちは、人数ではなく密度で勝負します。人を雇うことが目的ではなく、その人の挑戦を最大限に意味づけられる場所をつくる。
+</p>
+<p class="text-base">
+アプリもサービスも、ただの"ツール"ではなく、「挑戦を加速させる体験」でなければ意味がありません。
+</p>
+<p class="text-base font-bold mt-8">
+挑戦こそ、最高の贅沢。
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Section -->
+<section id="blog" class="bg-gray-50 py-20">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="relative mb-24">
+<div class="absolute inset-0 overflow-hidden rounded-3xl">
+<img src="https://readdy.ai/api/search-image?query=A%20stunning%2C%20cinematic%20composition%20showing%20a%20grand%20architectural%20space%20with%20soaring%20glass%20ceilings%20and%20dramatic%20natural%20light%20streaming%20through%2C%20creating%20ethereal%20light%20beams.%20The%20space%20features%20minimal%2C%20elegant%20design%20with%20reflective%20surfaces%20and%20clean%20lines.%20A%20solitary%20figure%20stands%20contemplatively%20in%20the%20vast%20space%2C%20suggesting%20the%20scale%20of%20human%20ambition.%20The%20atmosphere%20is%20serene%20yet%20powerful%2C%20with%20a%20sophisticated%20color%20palette%20of%20whites%2C%20grays%2C%20and%20warm%20golden%20light.%20The%20perspective%20draws%20the%20viewer%20into%20the%20space%2C%20creating%20a%20sense%20of%20awe%20and%20possibility.&width=1920&height=600&seq=10&orientation=landscape" alt="Vision Banner" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-r from-white/98 via-white/95 to-white/90"></div>
+</div>
+<div class="relative py-24 px-8 md:px-12">
+<h2 class="text-5xl md:text-6xl font-bold mb-8 max-w-3xl leading-tight">あなたの挑戦が、<br>誰かの物語になる。</h2>
+<p class="text-xl md:text-2xl text-gray-800 max-w-2xl leading-relaxed">
+私たちは、一人ひとりの挑戦を通じて、新しい可能性の物語を紡いでいきます。その軌跡は、次の挑戦者たちへのインスピレーションとなり、さらなる挑戦の連鎖を生み出していきます。
+</p>
+<div class="mt-12 flex gap-6">
+<div class="w-32 h-1 bg-primary rounded-full"></div>
+<div class="w-16 h-1 bg-primary/30 rounded-full"></div>
+<div class="w-8 h-1 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+<h3 class="text-3xl font-bold mb-12 text-center">ACTION</h3>
+<div class="overflow-hidden">
+<div class="blog-slider flex gap-8 transition-transform duration-500" id="blogSlider">
+<div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden min-w-[320px] md:min-w-[400px]">
+<div class="aspect-w-16 aspect-h-9 relative">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20and%20inspiring%20scene%20capturing%20the%20essence%20of%20modern%20innovation.%20The%20image%20shows%20an%20elegantly%20designed%20space%20with%20dramatic%20lighting%20and%20reflective%20surfaces%2C%20featuring%20subtle%20technological%20elements%20integrated%20seamlessly%20into%20the%20architectural%20design.%20The%20composition%20emphasizes%20clean%20lines%20and%20geometric%20patterns%2C%20with%20warm%20natural%20light%20creating%20an%20atmosphere%20of%20possibility%20and%20refinement.%20The%20space%20suggests%20both%20creativity%20and%20precision%2C%20with%20carefully%20curated%20design%20elements%20that%20speak%20to%20the%20future%20of%20human%20potential.&width=800&height=450&seq=1&orientation=landscape" alt="Blog Image" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm">挑戦の設計</span>
+<span class="text-sm text-gray-400">2025.06.29</span>
+</div>
+<h3 class="text-lg font-bold mb-4 line-clamp-2">「挑戦」を科学する：行動経済学とAIの融合</h3>
+<p class="text-gray-700 mb-4 line-clamp-3 text-base leading-relaxed">人間の行動特性とAIを組み合わせることで、より自然な形で挑戦できる環境をつくる。その実践的アプローチについて。</p>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden min-w-[320px] md:min-w-[400px]">
+<div class="aspect-w-16 aspect-h-9 relative">
+<img src="https://readdy.ai/api/search-image?query=A%20breathtaking%20architectural%20space%20that%20embodies%20the%20future%20of%20human%20potential.%20The%20scene%20features%20soaring%20glass%20walls%20and%20dramatic%20light%20beams%20creating%20ethereal%20patterns.%20Minimal%2C%20contemporary%20furniture%20and%20subtle%20technology%20interfaces%20blend%20seamlessly%20with%20natural%20elements.%20The%20space%20suggests%20both%20grandeur%20and%20intimacy%2C%20with%20carefully%20considered%20design%20details%20that%20create%20an%20atmosphere%20of%20refined%20innovation%20and%20possibility.&width=800&height=450&seq=2&orientation=landscape" alt="Blog Image" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm">プロダクト開発</span>
+<span class="text-sm text-gray-400">2025.06.25</span>
+</div>
+<h3 class="text-lg font-bold mb-4 line-clamp-2">感情に寄り添うプロダクトデザイン</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">ユーザーの感情的なバリアを理解し、それを緩和するプロダクト設計の実践例と、その効果について。</p>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden min-w-[320px] md:min-w-[400px]">
+<div class="aspect-w-16 aspect-h-9 relative">
+<img src="https://readdy.ai/api/search-image?query=A%20visually%20stunning%20modern%20space%20that%20captures%20the%20essence%20of%20innovation%20and%20human%20potential.%20The%20scene%20features%20a%20grand%20atrium%20with%20floating%20geometric%20elements%20and%20cascading%20light.%20Minimalist%20design%20elements%20combine%20with%20cutting-edge%20technology%20displays%2C%20while%20natural%20materials%20add%20warmth%20and%20texture.%20The%20composition%20creates%20a%20sense%20of%20aspiration%20and%20possibility%2C%20with%20careful%20attention%20to%20light%20and%20shadow%20playing%20across%20architectural%20features.&width=800&height=450&seq=3&orientation=landscape" alt="Blog Image" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block bg-purple-100 text-purple-800 px-4 py-1 rounded-full text-sm">未来構想</span>
+<span class="text-sm text-gray-400">2025.06.20</span>
+</div>
+<h3 class="text-lg font-bold mb-4 line-clamp-2">地方から世界へ：新しい挑戦の形</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">高知から始まる新しいチャレンジの形。場所に縛られない、質の高い挑戦環境の構築について。</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-4 mt-8">
+<button id="prevBtn" class="w-12 h-12 rounded-full bg-white shadow hover:shadow-lg transition-shadow flex items-center justify-center text-gray-600 hover:text-primary">
+<i class="ri-arrow-left-s-line ri-xl"></i>
+</button>
+<button id="nextBtn" class="w-12 h-12 rounded-full bg-white shadow hover:shadow-lg transition-shadow flex items-center justify-center text-gray-600 hover:text-primary">
+<i class="ri-arrow-right-s-line ri-xl"></i>
+</button>
+</div>
+<div class="mt-16 text-center space-y-8">
+<p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+私たちは、日々新しい挑戦の形を探求し、その過程で得られた知見を共有しています。<br>
+あなたの次の一歩のきっかけが、ここにあるかもしれません。
+</p>
+<div class="flex justify-center gap-4">
+<a href="https://note.com/luxucare_ai/all" target="_blank" rel="noopener noreferrer" data-readdy="true" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-gray-700 hover:text-gray-900 transition-colors border border-gray-300 rounded-full hover:bg-gray-50">
+もっと詳しく
+<i class="ri-arrow-right-line"></i>
+</a>
+<a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-white !rounded-button hover:bg-opacity-90 transition-all">
+挑戦を始める
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Company Section -->
+<section id="company" class="bg-white py-20">
+<div class="container mx-auto px-4 sm:px-6 box-border">
+<h2 class="text-3xl md:text-4xl font-bold mb-16 section-title">挑戦を、誰かのそばで設計する人</h2>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- CEO Profile -->
+<div class="w-full md:w-1/3">
+<div class="bg-gray-100 p-8 rounded">
+<img src="https://static.readdy.ai/image/c33b88104960700240b91b5e5a3dc3dc/5a074ddc0fab4406bf659f77bdc10eae.jfif" alt="河野 元気" class="w-24 h-24 object-cover rounded-full mx-auto mb-6">
+<h3 class="text-xl font-bold text-center mb-2">河野 元気</h3>
+<p class="text-gray-600 text-center mb-4">代表取締役</p>
+<p class="text-gray-700 mb-6">
+「なんか、すごいこと始まってる会社だな。」「このプロジェクトに関わったら、自分も成長できそう。」そう思ってもらえるような存在でありたい。
+</p>
+<div class="flex justify-center">
+<a href="https://www.facebook.com/profile.php?id=100058758291599" target="_blank" rel="noopener noreferrer" data-readdy="true" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+<i class="ri-facebook-line"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Company Info -->
+<div class="w-full md:w-2/3">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-100">会社概要</h3>
+<ul class="space-y-4">
+<li class="flex flex-col sm:flex-row sm:items-center py-2">
+<span class="font-medium text-gray-500 sm:w-24 mb-1 sm:mb-0">会社名</span>
+<span class="text-gray-800">LuxuCare株式会社</span>
+</li>
+<li class="flex flex-col sm:flex-row sm:items-center py-2">
+<span class="font-medium text-gray-500 sm:w-24 mb-1 sm:mb-0">設立</span>
+<span class="text-gray-800">2025年6月2日</span>
+</li>
+<li class="flex flex-col sm:flex-row py-2">
+<span class="font-medium text-gray-500 sm:w-24 mb-1 sm:mb-0">所在地</span>
+<span class="text-gray-800">〒781-8136<br>高知県高知市一宮西町四丁目19番24号</span>
+</li>
+<li class="flex flex-col sm:flex-row py-2">
+<span class="font-medium text-gray-500 sm:w-24 mb-1 sm:mb-0">事業内容</span>
+<div class="text-gray-800">
+<div class="flex items-center mb-2">
+<i class="ri-code-line mr-2 text-primary"></i>
+<span>AIを活用したアプリ・サービス開発（海外展開も含む）</span>
+</div>
+<div class="flex items-center mb-2">
+<i class="ri-heart-line mr-2 text-primary"></i>
+<span>感情のバリアを緩めるUXプロダクト開発</span>
+</div>
+<div class="flex items-center">
+<i class="ri-line-chart-line mr-2 text-primary"></i>
+<span>行動経済学を活用した業務効率化</span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-100">Mission</h3>
+<div class="space-y-4">
+<p class="text-base leading-relaxed text-gray-800">
+AIと行動経済学を融合し、人々が「挑戦できる状態」をつくることに注力するスタートアップです。今、世界は劇的に変化しています。個人でも世界へ向けてサービスを発信できる時代、誰もがクリエイターであり、挑戦者になれるはずです。
+</p>
+<div class="pt-4 border-t border-gray-100">
+<p class="text-gray-800 font-medium">
+LuxuCareは、そんな"もったいない停滞"を打ち破るために生まれました。
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="bg-gray-50 py-20">
+<div class="container mx-auto px-4 sm:px-6 box-border">
+<div class="text-center">
+<a href="https://forms.gle/z1LSUQRppk24FyrcA" target="_blank" rel="noopener noreferrer" data-readdy="true" class="inline-block bg-primary text-white py-4 px-8 !rounded-button font-medium hover:bg-opacity-90 transition-all cta-button whitespace-nowrap text-lg">
+<i class="ri-mail-line mr-2"></i>お問合せはこちら
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#15181E] text-white py-12 w-full">
+<div class="container mx-auto px-6">
+<div class="flex flex-col space-y-8">
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-white text-xl">LuxuCare株式会社 <span class="text-gray-400">(ラグジュケア)</span></h3>
+<p class="text-gray-400">挑戦こそ、最高の贅沢。</p>
+<p class="text-gray-400">〒781-8136 高知県高知市一宮西町四丁目19番24号</p>
+</div>
+<a href="https://www.facebook.com/profile.php?id=100058758291599" target="_blank" rel="noopener noreferrer" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill ri-lg"></i>
+</a>
+</div>
+</div>
+<div class="border-t border-gray-800"></div>
+<div class="flex flex-col space-y-4">
+<div class="flex flex-wrap gap-x-8 gap-y-2 text-sm justify-end">
+<a href="#about" class="text-gray-400 hover:text-white transition-colors">Concept</a>
+<a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+<a href="#vision" class="text-gray-400 hover:text-white transition-colors">Vision</a>
+<a href="#company" class="text-gray-400 hover:text-white transition-colors">会社概要</a>
+<a href="#contact" class="text-gray-400 hover:text-white transition-colors">お問合せ</a>
+<a href="https://readdy.ai/home/74f67e7f-ccfe-414d-bae3-36ea84e349e1/fc752f90-2489-4820-b7eb-1780d760c56b" target="_blank" rel="noopener noreferrer" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">プライバシーポリシー</a>
+<a href="https://readdy.ai/home/74f67e7f-ccfe-414d-bae3-36ea84e349e1/e1d6f426-8f93-4e6c-b795-17bc275d4b88" target="_blank" rel="noopener noreferrer" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">特定商取引法に基づく表記</a>
+</div>
+<div class="text-center text-gray-500 text-sm">
+<p>&copy; 2025 LuxuCare株式会社. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const logoLink = document.getElementById('logo-link');
+logoLink.addEventListener('click', function(e) {
+e.preventDefault();
+if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
+window.location.reload();
+} else {
+window.location.href = '/';
+}
+});
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+});
+});
+});
+</script>
+<script id="blog-slider-script">
+document.addEventListener('DOMContentLoaded', function() {
+const slider = document.getElementById('blogSlider');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentPosition = 0;
+const slideWidth = 420;
+const maxSlides = slider.children.length;
+const maxPosition = -(maxSlides - 1) * slideWidth;
+function updateSliderPosition() {
+slider.style.transform = `translateX(${currentPosition}px)`;
+}
+prevBtn.addEventListener('click', () => {
+if (currentPosition < 0) {
+currentPosition += slideWidth;
+updateSliderPosition();
+}
+});
+nextBtn.addEventListener('click', () => {
+if (currentPosition > maxPosition) {
+currentPosition -= slideWidth;
+updateSliderPosition();
+}
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
